@@ -136,8 +136,10 @@ I would recommend this book, if someone wants to master the microservices.
 3. Dockerization
 
     ```
-    dockerfile for all microservices 
+    dockerfile for all microservices
+    FROM  
     ```
+    3.1 - Docker test - Chnages for test integration
 ---
 Commands to be used
 ```
