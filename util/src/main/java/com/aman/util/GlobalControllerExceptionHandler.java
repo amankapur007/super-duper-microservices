@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.client.HttpClientErrorException.BadRequest;
+
+import com.aman.api.exceptions.BadRequestException;
 import com.aman.api.exceptions.InvalidInputException;
 import com.aman.api.exceptions.NotFoundException;
 
@@ -15,6 +18,14 @@ import com.aman.api.exceptions.NotFoundException;
 public class GlobalControllerExceptionHandler {
 
   private static final Logger LOG = LoggerFactory.getLogger(GlobalControllerExceptionHandler.class);
+
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  @ExceptionHandler(BadRequestException.class)
+  public @ResponseBody HttpErrorInfo handleBadRequestExceptions(
+    ServerHttpRequest request, BadRequestException ex) {
+
+    return createHttpErrorInfo(HttpStatus.BAD_REQUEST, request, ex);
+  }
 
   @ResponseStatus(HttpStatus.NOT_FOUND)
   @ExceptionHandler(NotFoundException.class)
