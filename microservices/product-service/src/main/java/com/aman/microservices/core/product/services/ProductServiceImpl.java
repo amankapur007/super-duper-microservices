@@ -2,7 +2,7 @@ package com.aman.microservices.core.product.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aman.api.core.product.Product;
@@ -12,12 +12,12 @@ import com.aman.api.exceptions.NotFoundException;
 import com.aman.util.ServiceUtil;
 
 @RestController
-@ComponentScan("com.aman")
 public class ProductServiceImpl implements ProductService{
 
     private static final Logger LOG = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     private final ServiceUtil serviceUtil;
+    @Autowired
     public ProductServiceImpl(ServiceUtil serviceUtil) {
         this.serviceUtil = serviceUtil;
     }

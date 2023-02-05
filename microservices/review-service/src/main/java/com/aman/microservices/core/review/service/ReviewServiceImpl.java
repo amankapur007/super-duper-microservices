@@ -16,7 +16,6 @@ import com.aman.api.exceptions.InvalidInputException;
 import com.aman.util.ServiceUtil;
 
 @RestController
-@ComponentScan("com.aman")
 public class ReviewServiceImpl implements ReviewService {
 
   private static final Logger LOG = LoggerFactory.getLogger(ReviewServiceImpl.class);

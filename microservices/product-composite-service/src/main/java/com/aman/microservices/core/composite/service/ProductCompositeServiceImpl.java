@@ -13,7 +13,6 @@ import com.aman.api.exceptions.NotFoundException;
 import com.aman.util.ServiceUtil;
 
 @RestController
-@ComponentScan("com.aman")
 public class ProductCompositeServiceImpl implements ProductCompositeService {
 
   private final ServiceUtil serviceUtil;
