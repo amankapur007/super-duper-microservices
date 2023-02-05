@@ -133,6 +133,12 @@ I would recommend this book, if someone wants to master the microservices.
 2.1 - Services Test Cases 
 
 ---
+3. Dockerization
+
+    ```
+    dockerfile for all microservices 
+    ```
+---
 Commands to be used
 ```
 - Build project
